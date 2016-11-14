@@ -1,0 +1,17 @@
+import time
+
+print("Welcome to our RPG Text based game!")
+print(" Have you been on an adventure like this before?")
+
+inst = print(input("[A]Yes, I have\n[B] No, I'm new \n*To pick an option, type the respective letter*"))
+
+if inst == "a" or "A":
+    print("Ok, so let's begin your journey through the worlds!")
+    time.sleep(2)
+else:
+    print("The aim of this game is to adventure through these fantasy worlds defeating the bosses.")
+    print("When there is a multiple choice statement, answer them with their respective letter.")
+    print("The rest we will explain as the game progresses....so let's begin!")
+    time.sleep(10)
+
+print("\nYou let out a exhausted groan... \nYou feel the clutches of shackles gnawing at your wrists.")
