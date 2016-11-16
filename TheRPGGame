@@ -1,17 +1,27 @@
+__author__ = 'r00214'
 import time
 
 print("Welcome to our RPG Text based game!")
-print(" Have you been on an adventure like this before?")
 
-inst = print(input("[A]Yes, I have\n[B] No, I'm new \n*To pick an option, type the respective letter*"))
+print("\nThe aim of this game is to adventure through these fantasy worlds defeating the bosses.")
+print("When there is a multiple choice statement, answer them with their respective letter.")
+print("The rest we will explain as the game progresses....so let's begin!")
+time.sleep(9)
 
-if inst == "a" or "A":
-    print("Ok, so let's begin your journey through the worlds!")
-    time.sleep(2)
-else:
-    print("The aim of this game is to adventure through these fantasy worlds defeating the bosses.")
-    print("When there is a multiple choice statement, answer them with their respective letter.")
-    print("The rest we will explain as the game progresses....so let's begin!")
-    time.sleep(10)
-
-print("\nYou let out a exhausted groan... \nYou feel the clutches of shackles gnawing at your wrists.")
+print("\nYou let out a exhausted groan... ")
+time.sleep(3)
+print("You feel the clutches of shackles gnawing at your wrists.")
+time.sleep(3)
+print("Your hands are shivering. You peer around the room. ")
+time.sleep(4)
+print("You're in a damp cell; you can barely fit in it.")
+time.sleep(3)
+print("Bloodied handprints litter the cold, stone walls, the floor is equally cold.")
+time.sleep(3)
+print("Etched beside you are hundreds of indents along the wall;")
+time.sleep(3)
+print("One thousand, to be precise. But today, you'll finally be free. No more days in this dirty cell.")
+time.sleep(4)
+print("You'll find yourself in hell. Today,")
+time.sleep(3)
+print("Today,is your execution.")
