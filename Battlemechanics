@@ -14,7 +14,6 @@ OpHP = 100
 FirstMove = 1
 OpFirstMove = 0
 
-
 if Inl > OpInl:
     FirstMove == 1
     OpFirstMove == 0
@@ -23,30 +22,31 @@ else:
     OpFirstMove == 1
 
 if FirstMove > OpFirstMove:
-  print ("Your Current stats are:")
-  print ("Attack:" , Att)
-  print ("HP:"  ,HP)
-  time.sleep(2)
-  print ("your Opponent's Stats are:")
-  print ("Attack:" , OpAtt)
-  print ("HP" , HP)
-  time.sleep(2)
-  print ("Your turn!")
-  time.sleep(1)
-  
-  Move1 = str(input(print ("Select a move:" , n/ , "[A] Attack opponent" , n/ , "[B] Bide your time" , n/ , "[C] Try to scare your opponent off")))
-  if Move1 == 'a' or 'A':
-      Hit1 = random.randint(1,4)
-      if Hit1 == 4:
-          OpHP - 10
-          print ("Success!, Opponet's HP is now" , OpHp , ".")
-      else:
-          print ("Failure, no damage dealt.")
-  elif Move1 == 'b' or "B":
-      print ("You do nothing")
-  else:
-      Scare1 = random.randint (1,7)
-      if Scare1 == 7:
-          print ("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
-      else:
-          print ("Failure, the opponent stands his ground")    
+    print("Your Current stats are:")
+    print("Attack:", Att)
+    print("HP:", HP)
+    time.sleep(2)
+    print("your Opponent's Stats are:")
+    print("Attack:", OpAtt)
+    print("HP", HP)
+    time.sleep(2)
+    print("Your turn!")
+    time.sleep(1)
+
+    print("Select a move:")
+    Move1 = str(input(print("[A] Attack opponent\n[B] Bide your time\n[C] Try to scare your opponent off")))
+    if Move1 == 'a' or 'A':
+        Hit1 = random.randint(1, 4)
+        if Hit1 == 4:
+            OpHP - 10
+            print("Success!, Opponet's HP is now", OpHP, ".")
+        else:
+            print("Failure, no damage dealt.")
+    elif Move1 == 'b' or "B":
+        print("You do nothing")
+    elif Move1 == "c" or "C":
+        Scare1 = random.randint(1, 7)
+        if Scare1 == 7:
+            print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
+        else:
+            print("Failure, the opponent stands his ground")
