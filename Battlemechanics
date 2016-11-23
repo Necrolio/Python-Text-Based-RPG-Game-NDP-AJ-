@@ -1,0 +1,23 @@
+__author__ = 'r00214'
+
+Att = 10
+Inl = 5
+HP = 100
+
+OpAtt = 10
+OpInl = 4
+OpHP = 100
+
+FirstMove = 1
+OpFirstMove = 0
+
+
+if Inl > OpInl:
+    FirstMove == 1
+    OpFirstMove == 0
+else:
+    FirstMove == 0
+    OpFirstMove == 1
+
+if FirstMove > OpFirstMove:
+    
