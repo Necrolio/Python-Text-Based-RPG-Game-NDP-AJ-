@@ -26,27 +26,44 @@ if FirstMove > OpFirstMove:
     print("Attack:", Att)
     print("HP:", HP)
     time.sleep(2)
-    print("your Opponent's Stats are:")
+    print("Your Opponent's Stats are:")
     print("Attack:", OpAtt)
-    print("HP", HP)
+    print("HP:", HP)
     time.sleep(2)
     print("Your turn!")
     time.sleep(1)
 
+if Inl > OpInl:
     print("Select a move:")
     Move1 = str(input(print("[A] Attack opponent\n[B] Bide your time\n[C] Try to scare your opponent off")))
-    if Move1 == 'a' or 'A':
+    if (Move1 == 'A' or Move1 == 'a'):
         Hit1 = random.randint(1, 4)
-        if Hit1 == 4:
-            OpHP - 10
+        if Hit1 == 4 or 3 or 2 :
+            damageRand = random.randint(8 ,12)
+            OpHP = OpHP - damageRand
             print("Success!, Opponet's HP is now", OpHP, ".")
         else:
             print("Failure, no damage dealt.")
-    elif Move1 == 'b' or "B":
+    elif (Move1 == 'b' or Move1 == "B"):
         print("You do nothing")
     elif Move1 == "c" or "C":
         Scare1 = random.randint(1, 7)
-        if Scare1 == 7:
-            print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
+        if OpHP > 71:
+            if Scare1 == 7 or 6:
+                print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
+        elif OpHP < 70:
+            if Scare1 == 7 or 6 or 5 or 4:
+                print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
         else:
-            print("Failure, the opponent stands his ground")
+             print("Failure, the opponent stands his ground")
+else:
+    OpMove1 = random.randint(1,7)
+    if OpMove1 == 1:
+        OpHit1 = random.randint(1, 4)
+        if OpHit1 == 4 or 3 or 2 :
+            damageRand = random.randint(8 ,12)
+            OpHP = OpHP - damageRand
+            print("Success!, Opponet's HP is now", OpHP, ".")
+        else:
+            print("Failure, no damage dealt.")
+
