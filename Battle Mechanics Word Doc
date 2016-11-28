@@ -6,7 +6,7 @@ HP=100
 
 Attack=10
 
-Intellect=5  (up to
+Intellect=5  (up to
 50)
 
  
@@ -48,4 +48,22 @@ Op… - Opponent’s..(E.g. Att)
 
 First Move – Processes intellect and decides who has the
 first turn.
+
+Move – What user decides to do.
+
+Scare – Try to scare the opponent away.
+
+ 
+
+ 
+
+ 
+
+Boss 1 – Raziel, Born of the Blaze.
+
+Species :
+Dragon
+
+Special Move
+: Breathe Fire
 
