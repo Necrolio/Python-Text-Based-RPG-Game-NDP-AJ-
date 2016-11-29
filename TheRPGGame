@@ -1,5 +1,9 @@
-__author__ = 'r00214'
+__author__ = 'r00214' + 'r00204'
 import time
+
+Att = 10
+Inl = 5
+HP = 100
 
 print("Welcome to our RPG Text based game!")
 
@@ -7,6 +11,19 @@ print("\nThe aim of this game is to adventure through these fantasy worlds defea
 print("When there is a multiple choice statement, answer them with their respective letter.")
 print("The rest we will explain as the game progresses....so let's begin!")
 time.sleep(9)
+print ("\nThroughout the game you will have a set of stats that will be use in battles. These stats are:")
+time.sleep(4)
+print ("Intelligence (Inl), this will be used to decide who has the opportunity to strike first in battles, and will unlock new items as you progress through the game.")
+time.sleep(6)
+print ("Attack (Att), this will determine how much damage you do to your Opponent in a battle")
+time.sleep(4)
+print ("Hit Points (HP), this is how much heath you have.")
+time.sleep(3)
+print ("Your Current stats are:")
+print ("Attack:", Att)
+print ("HP:", HP)
+print ("Intellect:", Inl)
+time.sleep(5)
 
 print("\nYou let out a exhausted groan... ")
 time.sleep(3)
