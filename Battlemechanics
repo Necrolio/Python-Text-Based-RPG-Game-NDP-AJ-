@@ -39,7 +39,7 @@ if Inl > OpInl:
     if (Move1 == 'A' or Move1 == 'a'):
         Hit1 = random.randint(1, 4)
         if Hit1 == 4 or 3 or 2 :
-            damageRand = random.randint(8 ,12)
+            damageRand = random.randint(-2 ,2) + Att
             OpHP = OpHP - damageRand
             print("Success!, Opponet's HP is now", OpHP, ".")
         else:
@@ -61,7 +61,7 @@ else:
     if (OpMove1 == 1 or OpMove1 == 2 or OpMove1 == 3):
         OpHit1 = random.randint(1, 4)
         if OpHit1 == 4 or 3 or 2 :
-            damageRand = random.randint(8 ,12)
+            damageRand = random.randint(-2 ,2) - OpAtt
             HP = HP - damageRand
             print("Your Opponent Attacks!, Your HP is now", HP, ".")
         else:
@@ -86,7 +86,7 @@ while (HP > 0 or OpHP > 0):
         if (Move1 == 'A' or Move1 == 'a'):
             Hit1 = random.randint(1, 4)
             if Hit1 == 4 or 3 or 2:
-                damageRand = random.randint(8, 12)
+                damageRand = random.randint(-2, 2) + Att
                 OpHP = OpHP - damageRand
                 print("Success!, Opponet's HP is now", OpHP, ".")
             else:
@@ -108,7 +108,7 @@ while (HP > 0 or OpHP > 0):
         if (OpMove1 == 1 or OpMove1 == 2 or OpMove1 == 3 or OpMove1 == 4 or OpMove1 == 5):
             OpHit1 = random.randint(1, 4)
             if OpHit1 == 4 or 3 or 2:
-                damageRand = random.randint(8, 12)
+                damageRand = random.randint(-2, 2) + OpAtt
                 HP = HP - damageRand
                 print("Your Opponent Attacks!, Your HP is now", HP, ".")
             else:
