@@ -1,171 +1,3 @@
-__author__ = 'r00204'
-
-import time
-import random
-
-Att = 10
-Inl = 5
-HP = 100
-
-OpAtt = 10
-OpInl = 4
-OpHP = 100
-
-FirstMove = 1
-OpFirstMove = 0
-
-if Inl > OpInl:
-    FirstMove == 1
-    OpFirstMove == 0
-else:
-    FirstMove == 0
-    OpFirstMove == 1
-
-if FirstMove > OpFirstMove:
-    print("Your Current stats are:")
-    print("Attack:", Att)
-    print("HP:", HP)
-    time.sleep(2)
-    print("Your Opponent's current stats are:")
-    print("Attack:", OpAtt)
-    print("HP:", OpHP)
-    time.sleep(2)
-    print("Your turn!")
-    time.sleep(1)
-
-if Inl > OpInl:
-    print("Select a move:")
-    Move1 = str(input(print("[A] Attack opponent\n[B] Bide your time\n[C] Try to scare your opponent off")))
-    if (Move1 == 'A' or Move1 == 'a'):
-        Hit1 = random.randint(1, 4)
-        if Hit1 == 4 or 3 or 2 :
-            damageRand = random.randint(-2 ,2) + Att
-            OpHP = OpHP - damageRand
-            print("Success!, Opponet's HP is now", OpHP, ".")
-        else:
-            print("Failure, no damage dealt.")
-    elif (Move1 == 'b' or Move1 == "B"):
-        print("You do nothing")
-    elif Move1 == "c" or "C":
-        Scare1 = random.randint(1, 7)
-        if OpHP > 71:
-            if Scare1 == 7 or 6:
-                print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
-        elif OpHP < 70:
-            if Scare1 == 7 or 6 or 5 or 4:
-                print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
-        else:
-             print("Failure, the opponent stands his ground")
-else:
-    OpMove1 = random.randint(1,9)
-    if (OpMove1 == 1 or OpMove1 == 2 or OpMove1 == 3):
-        OpHit1 = random.randint(1, 4)
-        if OpHit1 == 4 or 3 or 2 :
-            damageRand = random.randint(-2 ,2) - OpAtt
-            HP = HP - damageRand
-            print("Your Opponent Attacks!, Your HP is now", HP, ".")
-        else:
-            print("Your Opponent failed to attack you, no damage received.")
-    elif OpMove1 == 6:
-        print("Your Opponent does nothing")
-    elif (OpMove1 == 7 or OpMove1 == 8):
-        OpScare1 = random.randint(1, 7)
-        if HP > 71:
-            if OpScare1 == 7 or 6:
-                print("Aargh!, you were scared away, don't worry though, this has no bad affects.")
-        elif HP < 70:
-            if OpScare1 == 7 or 6 or 5 or 4:
-                print("Aargh!, you were scared away, don't worry though, this has no bad affects.")
-        else:
-             print("Your Opponent tried to scare you away, but failed")
-
-while (HP > 0 or OpHP > 0):
-    if Inl > OpInl:
-        print("Select a move:")
-        Move1 = str(input(print("[A] Attack opponent\n[B] Bide your time\n[C] Try to scare your opponent off")))
-        if (Move1 == 'A' or Move1 == 'a'):
-            Hit1 = random.randint(1, 4)
-            if Hit1 == 4 or 3 or 2:
-                damageRand = random.randint(-2, 2) + Att
-                OpHP = OpHP - damageRand
-                print("Success!, Opponet's HP is now", OpHP, ".")
-            else:
-                print("Failure, no damage dealt.")
-        elif (Move1 == 'b' or Move1 == "B"):
-            print("You do nothing")
-        elif Move1 == "c" or "C":
-            Scare1 = random.randint(1, 7)
-            if OpHP > 71:
-                if Scare1 == 7 or 6:
-                    print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
-            elif OpHP < 70:
-                if Scare1 == 7 or 6 or 5 or 4:
-                    print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
-            else:
-                print("Failure, the opponent stands his ground")
-    else:
-        OpMove1 = random.randint(1, 8)
-        if (OpMove1 == 1 or OpMove1 == 2 or OpMove1 == 3 or OpMove1 == 4 or OpMove1 == 5):
-            OpHit1 = random.randint(1, 4)
-            if OpHit1 == 4 or 3 or 2:
-                damageRand = random.randint(-2, 2) + OpAtt
-                HP = HP - damageRand
-                print("Your Opponent Attacks!, Your HP is now", HP, ".")
-            else:
-                print("Your Opponent failed to attack you, no damage received.")
-        elif OpMove1 == 6:
-            print("Your Opponent does nothing")
-        elif (OpMove1 == 7 or OpMove1 == 8):
-            OpScare1 = random.randint(1, 7)
-            if HP > 71:
-                if OpScare1 == 7 or 6:
-                    print("Aargh!, you were scared away, don't worry though, this has no bad affects.")
-            elif HP < 70:
-                if OpScare1 == 7 or 6 or 5 or 4:
-                    print("Aargh!, you were scared away, don't worry though, this has no bad affects.")
-            else:
-                print("Your Opponent tried to scare you away, but failed")
-
-if OpHP < 1:
-        print ("Congratulations! You deafeated your Opponent, which one of their stats would you like to absorb?")
-        print("Your Opponent's current stats are:")
-        print("Attack:", OpAtt)
-        print("HP:", OpHP)
-        print ("Intellect:", OpInl)
-        absorb1 = print (str(input("[A] Intellect\n[B] Attack\n[C] HP\n[D] None of the above")))
-#We could prevent the player from absorbing the Opponent's HP if it was really good, to prevent them from become basically unkillable
-        if (absorb1 == "a" or absorb1 == "A"):
-            Inl == OpInl
-            print ("Opponent's intellect absorbed")
-        elif (absorb1 == "b" or absorb1 == "B"):
-            Att == OpAtt
-            print ("Opponent's Attack absorbed")
-        elif (absorb1 == "c" or absorb1 == "C"):
-            HP == OpHP
-            print ("Opponent's HP absorbed")
-        elif (absorb1 == "d" or absorb1 == "D"):
-            print ("None of your Opponent's stats absorbed")
-        print("Your current stats are:")
-        print("Attack:", Att)
-        print("HP:", HP)
-        print ("Intellect:", Inl)
-elif HP < 1:
-    print ("Oh no! You were defeated by your Opponent!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 __author__ = 'r00214'
 
 import random
@@ -186,11 +18,11 @@ battle = 1
 
 while battle == 1:
     if Inl > OpInl:
-        FirstMove == 1
-        OpFirstMove == 0
+        FirstMove = 1
+        OpFirstMove = 0
     else:
-        FirstMove == 0
-        OpFirstMove == 1
+        FirstMove = 0
+        OpFirstMove = 1
     if FirstMove > OpFirstMove:
         print("Your Current stats are:")
         print("Attack:", Att)
@@ -207,7 +39,7 @@ while battle == 1:
         print("Attack:", Att)
         print("HP:", HP)
         time.sleep(2)
-        print("Your Opponent's current stats are:")
+        print("\nYour Opponent's current stats are:")
         print("Attack:", OpAtt)
         print("HP:", OpHP)
         time.sleep(2)
@@ -215,88 +47,107 @@ while battle == 1:
         time.sleep(1)
     if FirstMove > OpFirstMove:
         print("Select a move:")
-        Move1 = str(input(print("[A] Attack opponent\n[B] Bide your time\n[C] Try to scare your opponent off")))
+        Move1 = str(input(print("[A] Attack opponent\n[B] Heal yourself by 10\n[C] Try to scare your opponent off")))
         if Move1 == 'A' or Move1 == 'a':
             Hit1 = random.randint(1, 4)
             if Hit1 == 4 or 3 or 2:
                 damageRand = random.randint(8, 12)
                 OpHP = OpHP - damageRand
-                print("Success!, Opponet's HP is now", OpHP, ".")
-                FirstMove == 0
-                OpFirstMove == 1
+                print("Success! Opponent's HP is now", OpHP, ".")
+                FirstMove = 0
+                OpFirstMove = 1
             else:
                 print("Failure, no damage dealt.")
-                FirstMove == 0
-                OpFirstMove == 1
+                FirstMove = 0
+                OpFirstMove = 1
         elif Move1 == 'b' or Move1 == "B":
-            print("You do nothing")
-            FirstMove == 0
-            OpFirstMove == 1
+            print("You heal yourself!")
+            HP = HP + 10
+            print("Your new health is", HP)
+            FirstMove = 0
+            OpFirstMove = 1
         elif Move1 == "c" or "C":
             Scare1 = random.randint(1, 7)
             if OpHP > 71:
                 if Scare1 == 7 or 6:
                     print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
-                    battle == 0
+                    battle = 0
             elif OpHP < 70:
                 if Scare1 == 7 or 6 or 5 or 4:
                     print("Congratulations!, you scared the opponent away, however, this means you gained no loot.")
-                    battle == 0
+                    battle = 0
             else:
                 print("Failure, the opponent stands his ground")
-                FirstMove == 0
-                OpFirstMove == 1
+                FirstMove = 0
+                OpFirstMove = 1
     if OpFirstMove > FirstMove:
         OpMove1 = random.randint(1, 8)
-        if OpMove1 == 1 or OpMove1 == 2 or OpMove1 == 3 or OpMove1 == 4 or OpMove1 == 5:
+        if OpMove1 == 1 or OpMove1 == 2 or OpMove1 == 3 or OpMove1 == 4:
             OpHit1 = random.randint(1, 4)
             if OpHit1 == 4 or 3 or 2:
                 damageRand = random.randint(8, 12)
                 HP = HP - damageRand
-                print("Your Opponent Attacks!, Your HP is now", HP, ".")
+                print("Opponent's Turn!")
+                time.sleep(3)
+                print("\nYour Opponent Attacks! Your HP is now", HP, ".")
                 FirstMove = 1
                 OpFirstMove = 0
             else:
-                print("Your Opponent failed to attack you, no damage received.")
+                print("Opponent's Turn!")
+                time.sleep(3)
+                print("\nYour Opponent failed to attack you, no damage received.")
                 FirstMove = 1
                 OpFirstMove = 0
+        elif OpMove1 == 5:
+            damageRand2 = random.randint(15,17)
+            HP = HP - damageRand2
+            print("Opponent's turn!")
+            time.sleep(3)
+            print("\nYour opponent does a special attack! Your HP is now", HP)
         elif OpMove1 == 6:
-            print("Your Opponent does nothing")
+            print("Opponent's Turn!")
+            time.sleep(3)
+            print("\nYour Opponent does nothing...")
             FirstMove = 1
             OpFirstMove = 0
         elif OpMove1 == 7 or OpMove1 == 8:
             OpScare1 = random.randint(1, 7)
             if HP > 71:
-                if OpScare1 == 7 or 6:
-                    print("Aargh!, you were scared away, don't worry though, this has no bad affects.")
-                    battle == 0
+                if OpScare1 == 7 :
+                    print("Opponent's Turn!")
+                    time.sleep(3)
+                    print("\nAargh!, you were scared away, don't worry though, this has no bad affects.")
+                    battle = 0
             elif HP < 70:
-                if OpScare1 == 7 or 6 or 5 or 4:
-                    print("Aargh!, you were scared away, don't worry though, this has no bad affects.")
-                    battle == 0
-            else:
-                print("Your Opponent tried to scare you away, but failed")
+                if OpScare1 == 7 or 6:
+                    print("Opponent's Turn!")
+                    time.sleep(3)
+                    print("\nAargh!, you were scared away, don't worry though, this has no bad affects.")
+                    battle = 0
+            elif OpScare1 == 5 or OpScare1 == 4 or OpScare1 == 3 or OpScare1 == 2 or OpScare1 == 1:
+                print("Opponent's Turn!")
+                time.sleep(3)
+                print("\nYour Opponent tried to scare you away, but failed")
                 FirstMove = 1
                 OpFirstMove = 0
-else:
-    print("Pies are tasty")
+
 
 
 if OpHP < 1:
-        print ("Congratulations! You deafeated your Opponent, which one of their stats would you like to absorb?")
+        print ("Congratulations! You defeated your Opponent, which one of their stats would you like to absorb?")
         print("Your Opponent's current stats are:")
         print("Attack:", OpAtt)
         print("HP:", OpHP)
         print ("Intellect:", OpInl)
         absorb1 = print (str(input("[A] Intellect\n[B] Attack\n[C] HP\n[D] None of the above")))
         if absorb1 == "a" or absorb1 == "A":
-            Inl == OpInl
+            Inl = OpInl
             print ("Opponent's intellect absorbed")
         elif absorb1 == "b" or absorb1 == "B":
-            Att == OpAtt
+            Att = OpAtt
             print ("Opponent's Attack absorbed")
         elif absorb1 == "c" or absorb1 == "C":
-            HP == OpHP
+            HP = OpHP
             print ("Opponent's HP absorbed")
         elif (absorb1 == "d" or absorb1 == "D"):
             print ("None of your Opponent's stats absorbed")
@@ -306,4 +157,4 @@ if OpHP < 1:
         print ("Intellect:", Inl)
 elif HP < 1:
     print ("Oh no! You were defeated by your Opponent!")
-    battle == 0
+    battle = 0
