@@ -151,24 +151,25 @@ if OpHP < 1:
         print ("Intellect:", Inl)
 elif HP < 1:
     print ("Oh no! You were defeated by your Opponent!")
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    __author__ = 'r00204'
 
-import time
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+__author__ = 'r00214'
+
 import random
+import time
 
 Att = 10
 Inl = 5
@@ -280,39 +281,29 @@ while battle == 1:
 else:
     print("Pies are tasty")
 
+
 if OpHP < 1:
-        print ("Congratulations! You defeated your Opponent, which one of their stats would you like to absorb?")
+        print ("Congratulations! You deafeated your Opponent, which one of their stats would you like to absorb?")
         print("Your Opponent's current stats are:")
         print("Attack:", OpAtt)
         print("HP:", OpHP)
         print ("Intellect:", OpInl)
-        absorb1 = print(str(input("[A] Intellect\n[B] Attack\n[C] HP\n[D] None of the above")))
+        absorb1 = print (str(input("[A] Intellect\n[B] Attack\n[C] HP\n[D] None of the above")))
         if absorb1 == "a" or absorb1 == "A":
             Inl == OpInl
             print ("Opponent's intellect absorbed")
-            battle == 0
         elif absorb1 == "b" or absorb1 == "B":
             Att == OpAtt
             print ("Opponent's Attack absorbed")
-            battle == 0
         elif absorb1 == "c" or absorb1 == "C":
             HP == OpHP
             print ("Opponent's HP absorbed")
-            battle == 0
-        elif absorb1 == "d" or absorb1 == "D":
+        elif (absorb1 == "d" or absorb1 == "D"):
             print ("None of your Opponent's stats absorbed")
         print("Your current stats are:")
         print("Attack:", Att)
         print("HP:", HP)
         print ("Intellect:", Inl)
-        battle == 0
 elif HP < 1:
     print ("Oh no! You were defeated by your Opponent!")
-    HP == HP - 5
-    Inl == Inl -1
-    Att == Att - 1
     battle == 0
-
-
-
-
