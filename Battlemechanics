@@ -4,10 +4,16 @@ import random
 import time
 
 Att = 10
+AttBase = 8
+AttMax = 12
+
 Inl = 5
 HP = 100
 
 OpAtt = 10
+OpAttBase = 8
+OpAttMax = 12
+
 OpInl = 4
 OpHP = 100
 
@@ -25,11 +31,11 @@ while battle == 1:
         OpFirstMove = 1
     if FirstMove > OpFirstMove:
         print("Your Current stats are:")
-        print("Attack:", Att)
+        print("Attack:", (AttBase + AttMax) / 2)
         print("HP:", HP)
         time.sleep(2)
         print("Your Opponent's current stats are:")
-        print("Attack:", OpAtt)
+        print("Attack:", (OpAttBase + OpAttMax) / 2)
         print("HP:", OpHP)
         time.sleep(2)
         print("Your turn!")
@@ -50,7 +56,7 @@ while battle == 1:
         Move1 = str(input(print("[A] Attack opponent\n[B] Heal yourself by 10\n[C] Try to scare your opponent off")))
         if Move1 == 'A' or Move1 == 'a':
             Hit1 = random.randint(1, 4)
-            if Hit1 == 4 or 3 or 2:
+            if Hit1 == 4 or Hit1 == 3 or Hit1 == 2:
                 damageRand = random.randint(8, 12)
                 OpHP = OpHP - damageRand
                 print("Success! Opponent's HP is now", OpHP, ".")
@@ -85,16 +91,16 @@ while battle == 1:
         if OpMove1 == 1 or OpMove1 == 2 or OpMove1 == 3 or OpMove1 == 4:
             OpHit1 = random.randint(1, 4)
             if OpHit1 == 4 or 3 or 2:
-                damageRand = random.randint(8, 12)
+                damageRand = random.randint(OpAttBase, OpAttMax)
                 HP = HP - damageRand
                 print("Opponent's Turn!")
-                time.sleep(3)
+                time.sleep(2)
                 print("\nYour Opponent Attacks! Your HP is now", HP, ".")
                 FirstMove = 1
                 OpFirstMove = 0
             else:
                 print("Opponent's Turn!")
-                time.sleep(3)
+                time.sleep(2)
                 print("\nYour Opponent failed to attack you, no damage received.")
                 FirstMove = 1
                 OpFirstMove = 0
@@ -102,50 +108,50 @@ while battle == 1:
             damageRand2 = random.randint(15,17)
             HP = HP - damageRand2
             print("Opponent's turn!")
-            time.sleep(3)
-            print("\nYour opponent does a special attack! Your HP is now", HP)
+            time.sleep(2)
+            print("\nYour opponent empowers their attack\n!")
+            OpAttBase = OpAttBase + 2
+            OpAttMax = OpAttMax + 2
+            time.sleep(2)
         elif OpMove1 == 6:
             print("Opponent's Turn!")
-            time.sleep(3)
+            time.sleep(2)
             print("\nYour Opponent does nothing...")
             FirstMove = 1
             OpFirstMove = 0
         elif OpMove1 == 7 or OpMove1 == 8:
             OpScare1 = random.randint(1, 7)
             if HP > 71:
-                if OpScare1 == 7 :
+                if OpScare1 == 1 :
                     print("Opponent's Turn!")
-                    time.sleep(3)
+                    time.sleep(2)
                     print("\nAargh!, you were scared away, don't worry though, this has no bad affects.")
                     battle = 0
             elif HP < 70:
-                if OpScare1 == 7 or 6:
+                if OpScare1 == 1 or OpScare1 == 2:
                     print("Opponent's Turn!")
-                    time.sleep(3)
+                    time.sleep(2)
                     print("\nAargh!, you were scared away, don't worry though, this has no bad affects.")
                     battle = 0
-            elif OpScare1 == 5 or OpScare1 == 4 or OpScare1 == 3 or OpScare1 == 2 or OpScare1 == 1:
+            elif OpScare1 == 3 or OpScare1 == 4 or OpScare1 == 5 or OpScare1 == 6 or OpScare1 == 7:
                 print("Opponent's Turn!")
-                time.sleep(3)
+                time.sleep(2)
                 print("\nYour Opponent tried to scare you away, but failed")
                 FirstMove = 1
                 OpFirstMove = 0
-
-
-
-if OpHP < 1:
-        print ("Congratulations! You defeated your Opponent, which one of their stats would you like to absorb?")
-        print("Your Opponent's current stats are:")
-        print("Attack:", OpAtt)
-        print("HP:", OpHP)
-        print ("Intellect:", OpInl)
-        absorb1 = print (str(input("[A] Intellect\n[B] Attack\n[C] HP\n[D] None of the above")))
-        if absorb1 == "a" or absorb1 == "A":
-            Inl = OpInl
-            print ("Opponent's intellect absorbed")
+        if OpHP < 1:
+            print ("Congratulations! You defeated your Opponent, which one of their stats would you like to absorb?")
+            print("Your Opponent's current stats are:")
+            print("Attack:", OpAtt)
+            print("HP:", OpHP)
+            print ("Intellect:", OpInl)
+            absorb1 = print (str(input("[A] Intellect\n[B] Attack\n[C] HP\n[D] None of the above")))
+            if absorb1 == "a" or absorb1 == "A":
+                Inl = OpInl
+                print ("Opponent's intellect absorbed")
         elif absorb1 == "b" or absorb1 == "B":
-            Att = OpAtt
-            print ("Opponent's Attack absorbed")
+                Att = OpAtt
+                print ("Opponent's Attack absorbed")
         elif absorb1 == "c" or absorb1 == "C":
             HP = OpHP
             print ("Opponent's HP absorbed")
@@ -155,6 +161,6 @@ if OpHP < 1:
         print("Attack:", Att)
         print("HP:", HP)
         print ("Intellect:", Inl)
-elif HP < 1:
-    print ("Oh no! You were defeated by your Opponent!")
-    battle = 0
+    elif HP < 1:
+        print ("Oh no! You were defeated by your Opponent!")
+        battle = 0
